@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class Ingreso extends StatelessWidget {
   const Ingreso({super.key});
 
@@ -8,8 +10,8 @@ class Ingreso extends StatelessWidget {
     final alto = MediaQuery.of(context).size.height;
 
     bool isDesktop(BuildContext context) => ancho >= 600;
-    bool isMobile(BuildContext context) => ancho <600;
-    
+    bool isMobile(BuildContext context) => ancho < 600;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Artesanías "La Quebrada"'),
@@ -20,54 +22,54 @@ class Ingreso extends StatelessWidget {
         children: [
           Fondo(),
           cuerpo(),
-          
         ],
       ),
-
     );
   } //fin del metodo build
-}//fin de la clase ingreso
+} //fin de la clase ingreso
 
-Widget cuerpo(){
+Widget cuerpo() {
   return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Login',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
+    padding: EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Login',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
           ),
-          SizedBox(
-            height: 5,
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          'Bienvenido a tu cuenta',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 10,
+            letterSpacing: 1.5,
           ),
-          Text(
-            'Bienvenido a tu cuenta',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 10,
-              letterSpacing: 1.5,
-            ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Datos(),
-        ],
-      ),
-    );
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Datos(),
+      ],
+    ),
+  );
 }
+
 class Datos extends StatefulWidget {
   const Datos({super.key});
 
   @override
   State<Datos> createState() => _DatosState();
 }
+
 class _DatosState extends State<Datos> {
   bool obs = true;
   @override
@@ -77,12 +79,13 @@ class _DatosState extends State<Datos> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Correo',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+          Text(
+            AppLocalizations.of(context)!.welcome,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
           SizedBox(
             height: 5,
@@ -90,19 +93,18 @@ class _DatosState extends State<Datos> {
           TextFormField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'usuario@gmail.com'
-            ),
+                border: OutlineInputBorder(), hintText: 'usuario@gmail.com'),
           ),
           SizedBox(
             height: 5,
           ),
-          Text('Contraseña',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+          Text(
+            'Contraseña',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
           SizedBox(
             height: 5,
@@ -114,11 +116,11 @@ class _DatosState extends State<Datos> {
               hintText: '°°°°°°°',
               suffixIcon: IconButton(
                 icon: Icon(Icons.remove_red_eye_outlined),
-              onPressed: (){
-                setState(() {
-                  obs == true ? obs = true : obs = false;
-                });
-              },
+                onPressed: () {
+                  setState(() {
+                    obs == true ? obs = true : obs = false;
+                  });
+                },
               ),
             ),
           ),
@@ -146,13 +148,12 @@ class Remember extends StatelessWidget {
       children: [
         Checkbox(
           value: valor,
-          onChanged: (value) {
-          },
+          onChanged: (value) {},
         ),
         Text('Recuerdame'),
         Spacer(),
         TextButton(
-          onPressed: (){},
+          onPressed: () {},
           child: Text('¿Has olvidado tu contraseña?'),
         ),
       ],
@@ -171,7 +172,7 @@ class Botones extends StatelessWidget {
           width: double.infinity,
           height: 50,
           child: ElevatedButton(
-            onPressed: (){},
+            onPressed: () {},
             child: Text(
               'Login',
               style: TextStyle(
@@ -179,9 +180,10 @@ class Botones extends StatelessWidget {
               ),
             ),
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 83, 72, 53)),
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  Color.fromARGB(255, 83, 72, 53)),
             ),
-            ),
+          ),
         ),
         SizedBox(
           height: 25,
@@ -190,8 +192,8 @@ class Botones extends StatelessWidget {
         Text(
           'O entra con; ',
           style: TextStyle(
-                color: Colors.grey,
-              ),
+            color: Colors.grey,
+          ),
         ),
         SizedBox(
           height: 25,
@@ -201,7 +203,7 @@ class Botones extends StatelessWidget {
           width: double.infinity,
           height: 50,
           child: OutlinedButton(
-            onPressed: (){},
+            onPressed: () {},
             child: Text(
               'Inicia sesion con Google',
               style: TextStyle(
@@ -210,16 +212,17 @@ class Botones extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            ),
-            ),
+          ),
+        ),
         SizedBox(
           height: 25,
-          width: double.infinity,),
+          width: double.infinity,
+        ),
         Container(
-           width: double.infinity,
+          width: double.infinity,
           height: 50,
           child: OutlinedButton(
-            onPressed: (){},
+            onPressed: () {},
             child: Text(
               'Inicia sesion con Facebook',
               style: TextStyle(
@@ -228,7 +231,7 @@ class Botones extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            ),
+          ),
         ),
       ],
     );
@@ -242,15 +245,14 @@ class Fondo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+          gradient: LinearGradient(
         colors: [
           Color.fromARGB(255, 179, 137, 107),
           Color.fromARGB(255, 145, 103, 56)
         ],
         begin: Alignment.centerRight,
-        end: Alignment.centerLeft, 
-      )
-      ),
+        end: Alignment.centerLeft,
+      )),
     );
   }
 }
