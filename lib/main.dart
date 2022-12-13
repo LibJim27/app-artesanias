@@ -1,3 +1,4 @@
+import 'package:artesanias/navegacion/home.dart';
 import 'package:artesanias/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:artesanias/rutas/paginas.dart';
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // English, no country code
         Locale('es', ''), // Spanish, no country code
       ],
+      locale: Locale('en', ''),
+      home: Home(), 
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
       routes: Paginas.route,
     );
   } //fin del metodo build

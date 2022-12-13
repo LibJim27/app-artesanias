@@ -80,7 +80,7 @@ class _DatosState extends State<Datos> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.welcome,
+            AppLocalizations.of(context)!.bienvenida,
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

@@ -1,6 +1,9 @@
 import 'package:artesanias/login/ingreso.dart';
 import 'package:flutter/material.dart';
 import 'package:artesanias/rutas/routers.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 //Agregar Splash https://www.youtube.com/watch?v=PQB1E2JLZJA
 
 //Botones Menu https://www.youtube.com/watch?v=eVXX7TtPMws
@@ -15,6 +18,7 @@ class Home extends StatelessWidget {
     bool isDesktop(BuildContext context) => ancho >= 600;
     bool isMobile(BuildContext context) => ancho <600;
     return Scaffold(
+      
      
       backgroundColor: Color.fromARGB(255, 166, 132, 104),
       drawer: Drawer(
@@ -52,13 +56,13 @@ class Home extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 124, 113, 89),
       ),
     
-    body:  cuerpo(), 
+    body:  cuerpo(context), 
     
     );
   }//fin del metodo build
 }//fin del la clase Home
 
-Widget cuerpo(){
+Widget cuerpo(BuildContext context){
   return ListView(
   children: [
     
@@ -66,13 +70,13 @@ Widget cuerpo(){
       child: Text(""),
       ),
     Expanded(
-      child: Text("La Quebrada es un acantilado de 45 metros de altura, con un canal de siete metros de ancho y cuatro de profundidad, está situado en el puerto de Acapulco, Guerrero, en el sur de México, el cual se creó al dinamitar un cerro.", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Schyler') ,)
+      child: Text(AppLocalizations.of(context).bienvenida,textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Schyler')),
       ),
       Expanded(
       child: Text(""),
       ),
     Expanded(
-      child: Text("Artesanías La Quebrada es un local comercial de artesanías ubicada en la zona turística de la Quebrada en el bello puerto de Acapulco. En nuestro comercio podrás encontrar diferentes tipor de souvenirs que podrás llevar a tus familiares y amigos para demostrarles que has visitado nuestra bella ciudad", textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Schyler'))
+      child: Text(AppLocalizations.of(context).nosotros, textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Schyler'))
       ),
     Expanded(
       child: Text(""),
